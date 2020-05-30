@@ -1,9 +1,25 @@
-import React from "react";
+import React, {Component}from "react";
 import './Main.css'
 
 import SignUpForm from '../sign-up-form/SignUpForm.js'
+import AttendeeList from '../attendee-list/AttendeeList.js'
 
-function Main(props) {
+
+class Main extends Component {
+ constructor(props) {
+     super(props)
+     this.state = {
+         attendee: []
+     }
+ }
+
+ addAttendee = (attendee) => {
+   this.setState((state, props) => ({
+       attendee: [...state.attendee, attendee]
+   }))
+
+ }
+ render() {
   return (
     <div className="Main">
       <h3>Album release party</h3>
@@ -12,14 +28,16 @@ function Main(props) {
         We hope to see <em>you</em> <strong>October 13</strong>!
       </p>
 
-      <SignUpForm />
+      <SignUpForm addAttendee={this.addAttendee}/>
 
       <h1 className="dark">Pre-order now!</h1>
       <p className="dark">The cool kids will all be there</p>
 
-      <ul className="AttendeeList"></ul>
+      
+      <AttendeeList />
     </div>
   );
+  }
 }
 
 export default Main;

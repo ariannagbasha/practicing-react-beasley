@@ -1,7 +1,7 @@
 import React from "react";
 import './Main.css'
 
-import SignUpForm from './components/SignUpForm.js'
+import SignUpForm from '../sign-up-form/SignUpForm.js'
 
 function Main(props) {
   return (

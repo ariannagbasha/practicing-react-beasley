@@ -12,3 +12,10 @@ h1 {
   font-size: 40px;
   font-family: Oswald, sans-serif;
 }
+button {
+  padding: 8px 24px;
+  border: 1px solid gray;
+  font-size: 12px;
+  background-color: forestgreen;
+  color: #fff;
+}

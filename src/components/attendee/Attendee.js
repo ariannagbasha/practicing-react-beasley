@@ -9,7 +9,7 @@ function Attendee(props) {
 
     return(
         <li className="Attendee">
-            {props.attendee.email} - {guests} guests(s)
+            {props.attendee.email} {guests} 
         </li>
     )
 

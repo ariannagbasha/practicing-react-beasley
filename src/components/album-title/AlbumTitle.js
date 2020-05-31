@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './AlbumTitle.css'
 
-function AlbumTitle(props) {
+class AlbumTitle extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            reveal: false,
+        }
+    } 
+    handleReveal = event => {
+        this.setState({reveal: true}) 
+    }
+
+    
+    render() {
     return(
         <h1 className="AlbumTitle">
-            <button>Reveal Album Title</button>
-            <span>Night of the Salamander</span>
+            <button onClick={this.handleReveal}>Reveal Album Title</button>
+            { this.state.reveal ? <span>Night of the Salamander</span> : null}
         </h1>
     )
-
+    }
 }
 export default AlbumTitle

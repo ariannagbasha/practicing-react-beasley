@@ -3,23 +3,23 @@ import "./SignUpForm.css";
 
 class SignUpForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             attendee: {
                 email: '',
-                guest: 0,
+                guests: 0,
             }
         }
     }
    handleChange = (event) => { //ES6 Freecodecamp //
-        const { attendee } = {...this.state} 
+        const { attendee } = {...this.state}
         attendee[event.target.name] = event.target.value
         this.setState({
             attendee
         })
    } 
    handleSubmit = (event) => {
-       event.preventDefault()
+       event.preventDefault();
        this.props.addAttendee({...this.state.attendee})
        this.setState({
            attendee: {

@@ -1,21 +1,21 @@
 import React, {Component}from "react";
 import './Main.css'
 
-import SignUpForm from '../sign-up-form/SignUpForm.js'
-import AttendeeList from '../attendee-list/AttendeeList.js'
+import SignUpForm from '../sign-up-form/SignUpForm';
+import AttendeeList from '../attendee-list/AttendeeList';
 
 
 class Main extends Component {
  constructor(props) {
      super(props)
      this.state = {
-         attendee: []
+         attendees: []
      }
  }
 
  addAttendee = (attendee) => {
    this.setState((state, props) => ({
-       attendee: [...state.attendee, attendee]
+       attendees: [...state.attendees, attendee]
    }))
 
  }
@@ -34,7 +34,7 @@ class Main extends Component {
       <p className="dark">The cool kids will all be there</p>
 
       
-      <AttendeeList />
+      <AttendeeList attendees={this.state.attendees}/>
     </div>
   );
   }
